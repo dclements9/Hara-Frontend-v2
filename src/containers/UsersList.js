@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class StudentsList extends Component {
+class UsersList extends Component {
 
     render() {
         return (
             <div>
-                <h1> Students List </h1>
+                <h1> Users List </h1>
             </div>
         )
     }
 
 }
 
-export default StudentsList
+export default UsersList

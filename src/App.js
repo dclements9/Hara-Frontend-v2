@@ -3,14 +3,14 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
-import StudentsList from './containers/StudentsList'
+import UsersList from './containers/UsersList'
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Route exact path="/" component={Home} />
-        <Route path="/students" component={StudentsList} />
+        <Route path="/users" component={UsersList} />
       </Router>
     </div>
   );
