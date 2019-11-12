@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createLesson} from '../actions/lessons'
-class NewLesson extends Component {
 
+class NewLesson extends Component {
     state = {
         title: "",
         description: ""

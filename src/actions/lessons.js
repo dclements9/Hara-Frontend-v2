@@ -9,12 +9,15 @@ export const getLessons = () => {
     }
 }
 
-export const createLesson = (lessonObj) => {
-    console.log(lessonObj)
+export const createLesson = (lesson) => {
     return dispatch => {
         fetch(`http://localhost:3001/lessons`, {
             method: 'POST',
-            body: JSON.stringify({ lesson: lessonObj })
+            headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ lesson })
         })
         .then(resp => resp.json())
         .then(lesson => dispatch({
