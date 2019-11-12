@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Home from './components/Welcome'
+import Home from './components/Home'
 import NewLesson from './components/NewLesson'
 import UsersList from './containers/UsersList'
 import LessonsList from './containers/LessonsList'
