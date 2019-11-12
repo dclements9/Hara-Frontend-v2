@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { getLessons } from '../actions/lessons'
+// import { getLessons } from '../actions/lessons'
 import { connect } from 'react-redux'
+
 class LessonsList extends Component {
 
-    componentDidMount() {
-        this.props.getLessons()
-    }
+    // componentDidMount() {
+    //     this.props.getLessons()
+    // }
 
     render() {
         if (this.props.lessons.lessons.length === 0) {
@@ -36,4 +37,5 @@ const mapStateToProps = (state) => {
     return { lessons: state }
 }
 
-export default connect(mapStateToProps, { getLessons })(LessonsList)
+export default connect(mapStateToProps)(LessonsList)
+// export default connect(mapStateToProps, { getLessons })(LessonsList)
