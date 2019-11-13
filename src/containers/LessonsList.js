@@ -9,7 +9,7 @@ class LessonsList extends Component {
     // }
 
     render() {
-        if (this.props.lessons.lessons.length === 0) {
+        if (this.props.lessons.length === 0) {
             // Possible loading bar/cycle
             return <h1> Loading... </h1>
         }
@@ -18,7 +18,7 @@ class LessonsList extends Component {
             <div>
                 <h1> Lessons List </h1>
 
-                {this.props.lessons.lessons.map( lesson => 
+                {this.props.lessons.map( lesson => 
                     <div>
                         <h2>{lesson.title}</h2>
                         <p>{lesson.description}</p>
@@ -33,9 +33,7 @@ class LessonsList extends Component {
 
 }
 
-const mapStateToProps = (state) => {
-    return { lessons: state }
-}
 
-export default connect(mapStateToProps)(LessonsList)
+export default connect(state => ({ lessons: state.lessons }))(LessonsList)
+
 // export default connect(mapStateToProps, { getLessons })(LessonsList)

@@ -8,12 +8,12 @@ class UsersList extends Component {
     }
 
     render() {
-        console.log(this.props.users.users)
+        console.log(this.props.users)
         return (
             // TODO: Rank conversion
             <div>
                 <h1> Users List </h1>
-                {this.props.users.users.map( user =>
+                {this.props.users.map( user =>
                     <div>
                         <h2>{user.first_name} {user.last_name}</h2>
                         <p> age: {user.age}</p>
@@ -26,9 +26,6 @@ class UsersList extends Component {
     }
 
 }
-const mapStateToProps = (state) => {
-    return { users: state }
-}
 
-// export default connect(mapStateToProps)(UsersList)
-export default connect(mapStateToProps, { getUsers })(UsersList)
+export default connect(state => ({ users: state.users }), { getUsers })(UsersList)
+

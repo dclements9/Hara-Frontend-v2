@@ -13,14 +13,16 @@ class Welcome extends Component {
         console.log(this.props)
         return (
             <div>
-                <h1> Welcome to Hara </h1>
+                <h1> Welcome to  Hara</h1>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return { users: state }
-}
+// const mapStateToProps = (state) => {
+//     return { users: state.users }
+// }
 
-export default connect(mapStateToProps, { getUser })(Welcome)
+
+// export default connect(mapStateToProps, { getUser })(Welcome)
+export default connect(state => ({ users: state.users }), { getUser })(Welcome)
