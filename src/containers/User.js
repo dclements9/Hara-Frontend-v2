@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getUsers } from '../actions/users'
-import Button from 'react-bootstrap/Button'
+import { getUser } from '../actions/users'
 
 class UsersList extends Component {
     componentDidMount() {
-        this.props.getUsers()
+        this.props.getUser(user)
     }
 
     render() {
@@ -31,5 +30,5 @@ class UsersList extends Component {
 
 }
 
-export default connect(state => ({ users: state.users }), { getUsers })(UsersList)
+export default connect(state => ({ users: state.users }), { getUser })(UsersList)
 

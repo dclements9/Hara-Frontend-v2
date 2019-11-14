@@ -20,7 +20,7 @@ class LessonsList extends Component {
 
                 {this.props.lessons.map( lesson => 
                     <div>
-                        <h2>{lesson.title}</h2>
+                        <a href={`/users/${lesson.id}`}><h2>{lesson.title}</h2></a>
                         <p>{lesson.description}</p>
                         <p>{lesson.date}</p>
                         <p>{lesson.start_time}</p>
