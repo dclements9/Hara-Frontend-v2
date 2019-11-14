@@ -3,7 +3,7 @@ export const getLessons = () => {
         // make API call
         // Once data received, dispatch to reducers
 
-        return fetch(`http://localhost:3001/lessons`)
+        return fetch(`http://localhost:3001/api/v1/lessons`)
             .then(resp => resp.json())
             .then(lessons => dispatch({ type: 'LESSONS_FETCH_SUCCESS', payload: lessons}))
     }
@@ -11,7 +11,7 @@ export const getLessons = () => {
 
 export const createLesson = (lesson) => {
     return dispatch => {
-        fetch(`http://localhost:3001/lessons`, {
+        fetch(`http://localhost:3001/api/v1/lessons`, {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
