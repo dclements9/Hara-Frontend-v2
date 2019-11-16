@@ -1,41 +1,40 @@
 import React, { Component } from 'react'
-// import { getLessons } from '../actions/lessons'
 import { connect } from 'react-redux'
-// import Lesson from '../components/LessonPage'
-// import { Route } from 'react-router-dom'
-import {Link} from 'react-router-dom';
 
 class LessonsList extends Component {
 
-    // componentDidMount() {
-    //     this.props.getLessons()
-    // }
+// formatDate(date) {
+//     let dateParts = date.split('-');
+//     return (new Date (dateParts[0], (dateParts[1] - 1), dateParts[2]))
+// }
 
     render() {
+        
         if (this.props.lessons.length === 0) {
             // Possible loading bar/cycle
             return <h1> Loading... </h1>
         }
         return (
-            //TODO: Times & Date
+//TODO: Date conversion
             <div>
-                <h1> Lessons List </h1>
+                <div>
+                    <a href={"/lessons/new"}><h3>Create New Lesson</h3></a>
+                </div>
 
+                <h1> Lessons List </h1>
+                
                 {this.props.lessons.map( lesson => 
+
                     <div>
                         <a href={`/lessons/${lesson.id}`}><h2>{lesson.title}</h2></a>
-                        <Link to={`/lessons/${lesson.id}`}>Testing </Link>
-                        {/* <Route path={`${match.url}/:lessonId`} component={LessonShow}/> */}
-                        {/* <Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link> */}
                         <p>{lesson.description}</p>
                         <p>{lesson.date}</p>
-                        <p>{lesson.start_time}</p>
-                        <p>{lesson.end_time}</p>.
+                        <p>{new Date(lesson.start_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})} - 
+                        {new Date(lesson.end_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})}</p>
                         <hr />
-
-                    {/* <Route exact path={`/lessons/:lesson.id`} component={Lesson} /> */}
                     </div>
                 )}
+                
             </div>
         )
     }
@@ -44,5 +43,3 @@ class LessonsList extends Component {
 
 
 export default connect(state => ({ lessons: state.lessons }))(LessonsList)
-
-// export default connect(mapStateToProps, { getLessons })(LessonsList)
