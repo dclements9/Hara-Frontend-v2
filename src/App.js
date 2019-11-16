@@ -32,11 +32,6 @@ class App extends Component {
         <NavHeader />
         
         <Router>
-        
-        <div>
-            <Link to='/welcome'> Welcome Back </Link>
-            <Link to='/lessons'> Lessons Here </Link>
-        </div>
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/" component={Welcome} />
           <Route exact path="/users" component={UsersList} />
