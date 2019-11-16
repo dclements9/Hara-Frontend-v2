@@ -1,18 +1,16 @@
 import React from 'react';
-import LessonsList from '../containers/LessonsList';
  
-const LessonPage = ({ match }) => {
-  debugger;
-  // console.log(LessonsList)
-  const lesson = LessonsList.find(({ id }) => id === match.params.lessonId)
-  
-    console.log(lesson)
+const LessonPage = (props) => {
+  const lesson = props.less.find(({ id }) => id === parseInt(props.match.params.id))
     
+  if (!lesson){
+    return 'nothing'
+  }
   return (
-    <div>
-      
-      <h2> {lesson.title} </h2>
-      <h3>Lesson Show Component!</h3>
+    
+    <div> 
+      <h1> {lesson.title} </h1>
+      <h3> {lesson.description} </h3>
     </div>
   );
 }
