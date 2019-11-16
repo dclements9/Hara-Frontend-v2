@@ -24,9 +24,6 @@ class App extends Component {
   }
 
   render() {
-    const lessonsArray = this.props.lessons
-    const usersArray = this.props.users
-
     return (
       
       <div className="App">
@@ -41,9 +38,7 @@ class App extends Component {
           <Route exact path="/users/new" component={NewUser} />
           <Route path="/welcome" component={Welcome} />
           {/* <Route path="/admin" component={Admin} /> */}
-          <Route exact path="/lessons/:id" render= { (routeProps) => 
-            (<LessonPage {...routeProps} less={lessonsArray}/>)}
-          />
+          <Route path="/lessons/:id" component={LessonPage}/>
           <Route path="/users/:id" component={UserPage} />
         </Router>
       </div>

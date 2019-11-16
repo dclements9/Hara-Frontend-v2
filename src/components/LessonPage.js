@@ -1,18 +1,27 @@
 import React from 'react';
- 
-const LessonPage = (props) => {
-  const lesson = props.less.find(({ id }) => id === parseInt(props.match.params.id))
-    
-  if (!lesson){
-    return 'nothing'
+import { connect } from 'react-redux'
+
+function LessonPage (props) {    
+  if (!props.lesson){
+    return <p> Loading... </p>
   }
+
   return (
     
     <div> 
-      <h1> {lesson.title} </h1>
-      <h3> {lesson.description} </h3>
+      <h1> {props.lesson.title} </h1>
+      <h3> {props.lesson.description} </h3>
+      <p>{props.lesson.date}</p>
+      <p>{new Date(props.lesson.start_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})} - 
+      {new Date(props.lesson.end_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})}</p>
     </div>
   );
 }
- 
-export default LessonPage
+
+const mapStateToProps = (state, props) => {
+    const id = props.match.params.id;
+    const lesson = state.lessons.filter(lesson => lesson.id == id)[0]
+    return { lesson }
+}
+
+export default connect(mapStateToProps)(LessonPage)
