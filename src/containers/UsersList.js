@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from "react-router-dom"
 
 class UsersList extends Component {
     render() {
@@ -18,7 +19,7 @@ class UsersList extends Component {
 
                 {this.props.users.map( user => 
                     <div>
-                        <a href={`/users/${user.id}`}><h2>{user.first_name} {user.last_name}</h2></a>
+                        <Link to={`/users/${user.id}`}><h2>{user.first_name} {user.last_name}</h2></Link>
                         <p>rank: {user.rank}</p>
                     </div>
                 )}
