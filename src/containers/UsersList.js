@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import { getUsers } from '../actions/users'
-// import Button from 'react-bootstrap/Button'
 
 class UsersList extends Component {
-    // componentDidMount() {
-    //     this.props.getUsers()
-    // }
-
     render() {
         if (this.props.users.length === 0) {
             // Possible loading bar/cycle
@@ -16,6 +10,10 @@ class UsersList extends Component {
         return (
             // TODO: Rank conversion
             <div>
+                <div>
+                    <a href={"/users/new"}><h3>Create New User</h3></a>
+                </div>
+            
                 <h1> Users List </h1>
 
                 {this.props.users.map( user => 
