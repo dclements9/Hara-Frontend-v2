@@ -1,20 +1,25 @@
 import React from 'react';
- 
-const UserPage = (props) => {
-  const user = props.usersArray.find(({ id }) => id === parseInt(props.match.params.id))
-    
-  if (!user){
-    return 'nothing'
-  }
+import { connect } from 'react-redux'
+
+function UserPage (props) {
+    if (!props.user){
+        return <p> Loading... </p>
+    }
   return (
     
     <div> 
-      <h2> {user.first_name} {user.last_name} </h2>
-      <h3> rank: {user.rank} </h3>
-      <p> email:{user.email} </p>
-      <p> age: {user.age} </p>
+      <h2> {props.user.first_name} {props.user.last_name} </h2>
+      <h3> rank: {props.user.rank} </h3>
+      <p> email:{props.user.email} </p>
+      <p> age: {props.user.age} </p>
     </div>
   );
 }
+
+const mapStateToProps = (state, props) => {
+    const id = props.match.params.id;
+    const user = state.users.filter(user => user.id == id)[0]
+    return { user }
+}
  
-export default UserPage
+export default connect(mapStateToProps)(UserPage)

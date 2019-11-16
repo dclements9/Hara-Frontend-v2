@@ -12,7 +12,7 @@ import Welcome from './components/Welcome'
 // import LessonsPage from './components/LessonsPage'
 import { getLessons } from './actions/lessons'
 import { getUsers } from './actions/users'
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import LessonPage from './components/LessonPage'
 import UserPage from './components/UserPage'
 
@@ -44,9 +44,7 @@ class App extends Component {
           <Route exact path="/lessons/:id" render= { (routeProps) => 
             (<LessonPage {...routeProps} less={lessonsArray}/>)}
           />
-          <Route exact path="/users/:id" render= { (routeProps) => 
-            (<UserPage {...routeProps} usersArray={usersArray}/>)}
-          />
+          <Route path="/users/:id" component={UserPage} />
         </Router>
       </div>
     );
