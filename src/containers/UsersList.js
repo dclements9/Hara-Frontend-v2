@@ -12,7 +12,7 @@ class UsersList extends Component {
             // TODO: Rank conversion
             <div>
                 <div>
-                    <a href={"/users/new"}><h3>Create New User</h3></a>
+                    <Link to={"/users/new"}><h3>Create New User</h3></Link>
                 </div>
             
                 <h1> Users List </h1>
