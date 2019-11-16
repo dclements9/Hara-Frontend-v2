@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import { getLessons } from '../actions/lessons'
 import { connect } from 'react-redux'
-import Lesson from '../components/LessonPage'
-import { Route } from 'react-router-dom'
+// import Lesson from '../components/LessonPage'
+// import { Route } from 'react-router-dom'
 import {Link} from 'react-router-dom';
 
 class LessonsList extends Component {
