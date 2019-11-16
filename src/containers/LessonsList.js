@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 // import { getLessons } from '../actions/lessons'
 import { connect } from 'react-redux'
+import Lesson from '../components/LessonPage'
+import { Route } from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 class LessonsList extends Component {
 
@@ -20,11 +23,17 @@ class LessonsList extends Component {
 
                 {this.props.lessons.map( lesson => 
                     <div>
-                        <a href={`/users/${lesson.id}`}><h2>{lesson.title}</h2></a>
+                        <a href={`/lessons/${lesson.id}`}><h2>{lesson.title}</h2></a>
+                        <Link to={`/lessons/${lesson.id}`}>Testing </Link>
+                        {/* <Route path={`${match.url}/:lessonId`} component={LessonShow}/> */}
+                        {/* <Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link> */}
                         <p>{lesson.description}</p>
                         <p>{lesson.date}</p>
                         <p>{lesson.start_time}</p>
-                        <p>{lesson.end_time}</p>
+                        <p>{lesson.end_time}</p>.
+                        <hr />
+
+                    {/* <Route exact path={`/lessons/:lesson.id`} component={Lesson} /> */}
                     </div>
                 )}
             </div>
