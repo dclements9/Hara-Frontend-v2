@@ -8,19 +8,24 @@ import NewLesson from './components/NewLesson'
 import UsersList from './containers/UsersList'
 import LessonsList from './containers/LessonsList'
 import Welcome from './components/Welcome'
-import LessonsPage from './components/LessonsPage'
+// import LessonsPage from './components/LessonsPage'
 import { getLessons } from './actions/lessons'
+import { getUsers } from './actions/users'
 import {Link} from 'react-router-dom';
 import LessonPage from './components/LessonPage'
+import UserPage from './components/UserPage'
 
 class App extends Component {
 
   componentDidMount() {
-    // this.props.getLessons();
-    let lessons = this.props.getLessons();
+    this.props.getLessons();
+    this.props.getUsers();
   }
 
   render() {
+    const lessonsArray = this.props.lessons
+    const usersArray = this.props.users
+
     return (
       
       <div className="App">
@@ -39,33 +44,23 @@ class App extends Component {
           <Route exact path="/lessons/new" component={NewLesson} />
           <Route path="/welcome" component={Welcome} />
           {/* <Route path="/admin" component={Admin} /> */}
-          {/* <Route exact path="/lessons/:id" component={LessonPage} /> */}
-          <Route exact path="/lessons/:id" render={props => {
-            console.log(props.lessons)
-              // const lesson = lessons.find(lesson => lesson.id === props.match.params.id);
-              // return <LessonPage lesson={lesson} />;
-            }}
-/>
+          <Route exact path="/lessons/:id" render= { (routeProps) => 
+            (<LessonPage {...routeProps} less={lessonsArray}/>)}
+          />
+          <Route exact path="/users/:id" render= { (routeProps) => 
+            (<UserPage {...routeProps} usersArray={usersArray}/>)}
+          />
         </Router>
       </div>
     );
   }
 }
-// {console.log(state.lessons)}
-
-// const mapStateToProps = (state) => {
-//   return ({
-//     lessons: state
-//   })
-// }
 
 const mapStateToProps = state => {
   return {
-    lessons: state.lessons
+    lessons: state.lessons,
+    users: state.users
   };
 };
 
-// export default connect(null, { getLessons })(App)
-export default connect(mapStateToProps, { getLessons })(App);
-// export default withRouter(connect(mapStateToProps, { getLessons })(App));
-// export default connect(mapStateToProps, {getLessons})(App)
+export default connect(mapStateToProps, { getLessons, getUsers })(App);
