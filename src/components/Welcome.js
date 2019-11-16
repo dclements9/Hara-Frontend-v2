@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUser } from '../actions/users'
-import Navigationbar from './Navbar'
+// import Navigationbar from './Navbar'
 import Button from 'react-bootstrap/Button'
 
 class Welcome extends Component {
@@ -11,7 +11,7 @@ class Welcome extends Component {
 
     render() {
         //Get signed in user
-        const hStyle = { color: 'white' };
+        // const hStyle = { color: 'white' };
         return (
             // <Navigationbar />
             <div> 

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { Navbar, Nav } from "react-bootstrap";
 // import Logout from "../Logout/Logout.component";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 const NavHeader = () => {
   return (
