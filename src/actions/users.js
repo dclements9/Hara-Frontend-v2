@@ -1,7 +1,7 @@
 // Singular User fetch
 export const getUser = () => {
     return dispatch => {
-        return fetch(`http://localhost:3001/api/v1users/1`)
+        return fetch(`http://localhost:3001/api/v1/users/1`)
             .then(resp => resp.json())
             .then(user => dispatch({ type: 'USER_FETCHED', payload: user}))
     }
