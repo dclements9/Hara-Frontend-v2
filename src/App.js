@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import NavHeader from "./components/Navbar";
 // import Home from './components/Home'
@@ -9,12 +9,12 @@ import NewUser from './containers/NewUser'
 import UsersList from './containers/UsersList'
 import LessonsList from './containers/LessonsList'
 import Welcome from './components/Welcome'
-// import LessonsPage from './components/LessonsPage'
 import { getLessons } from './actions/lessons'
 import { getUsers } from './actions/users'
-// import {Link} from 'react-router-dom';
 import LessonPage from './components/LessonPage'
 import UserPage from './components/UserPage'
+import EditUser from './containers/EditUser.js'
+import EditLesson from './containers/EditLesson';
 
 class App extends Component {
 
@@ -27,9 +27,8 @@ class App extends Component {
     return (
       
       <div className="App">
-        <NavHeader />
-        
         <Router>
+        <NavHeader />
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/" component={Welcome} />
           <Route exact path="/users" component={UsersList} />
@@ -37,10 +36,12 @@ class App extends Component {
           <Route exact path="/lessons/new" component={NewLesson} />
           <Route exact path="/users/new" component={NewUser} />
           <Route path="/welcome" component={Welcome} />
-          {/* <Route path="/admin" component={Admin} /> */}
           <Route path="/lessons/:id" component={LessonPage}/>
+          <Route path="/lessons/:id/edit" component={EditLesson}/>
           <Route path="/users/:id" component={UserPage} />
+          <Route path="/users/:id/edit" component={EditUser} />
         </Router>
+        
       </div>
     );
   }
