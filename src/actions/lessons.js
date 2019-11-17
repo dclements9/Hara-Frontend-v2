@@ -26,6 +26,18 @@ export const createLesson = (lesson) => {
     }
 }
 
+export const deleteLesson = (id, history) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/api/v1/lessons/${id}`,{
+            method: 'DELETE'})
+            .then( resp => resp.json())
+            .then(id => {
+                dispatch({ type: "DELETE_LESSON_SUCCESS", payload: id })
+                history.push("/lessons")
+            })
+    }
+}
+
 // export const getLessons = () => {
 //     return async function(dispatch) {
 //         // make API call
