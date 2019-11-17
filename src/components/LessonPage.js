@@ -27,9 +27,9 @@ render (){
     )}
 }
 const mapStateToProps = (state, props) => {
-    const id = props.match.params.id;
-    const lesson = state.lessons.filter(lesson => lesson.id == id)[0]
-    return { lesson }
+  const id = props.match.params.id;
+  const lesson = state.lessons.filter(lesson => lesson.id === parseInt(id))[0]
+  return { lesson }
 }
 
 export default connect(mapStateToProps, { deleteLesson })(LessonPage)
