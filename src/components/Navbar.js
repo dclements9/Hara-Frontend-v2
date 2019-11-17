@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Navbar, Nav } from "react-bootstrap";
 
-const Navbar = () => {
+const Navheader = () => {
   return (
     <Navbar bg="light" variant="light">
       <Navbar.Brand style={{ color: "#218838" }} href="/">
@@ -17,4 +17,4 @@ const Navbar = () => {
 };
 
 
-export default connect()(Navbar);
+export default connect()(Navheader);
