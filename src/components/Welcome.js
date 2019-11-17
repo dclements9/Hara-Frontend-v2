@@ -4,10 +4,6 @@ import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button'
 
 class Welcome extends Component {
-    componentDidMount() {
-        this.props.getUser()
-    }
-
     render() {
         //Get signed in user
         // const hStyle = { color: 'white' };
