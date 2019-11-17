@@ -22,3 +22,15 @@ export const createUser = (user) => {
         }))
     }
 }
+
+export const deleteUser = (id, history) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/api/v1/users/${id}`,{
+            method: 'DELETE'})
+            .then( resp => resp.json())
+            .then(id => {
+                dispatch({ type: "DELETE_USER_SUCCESS", payload: id })
+                history.push("/users")
+            })
+    }
+}

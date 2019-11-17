@@ -6,7 +6,7 @@ export default (state = [], action) => {
             return action.payload
         case 'USER_CREATED': 
             return state.concat(action.payload)
-        case 'USER_DELETED':
+        case 'DELETE_USER_SUCCESS':
             return state.filter(user => user.id !== action.payload)
         default:
             return state
