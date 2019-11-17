@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getUser } from '../actions/users'
 // import Navigationbar from './Navbar'
 import Button from 'react-bootstrap/Button'
 
@@ -25,4 +24,4 @@ class Welcome extends Component {
     }
 }
 
-export default connect(state => ({ users: state.users }), { getUser })(Welcome)
+export default connect(state => ({ users: state.users }))(Welcome)
