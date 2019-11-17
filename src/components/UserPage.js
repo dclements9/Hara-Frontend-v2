@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteUser } from '../actions/users'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
 class UserPage extends Component {
 
@@ -21,6 +22,11 @@ class UserPage extends Component {
       <p> email:{user.email} </p>
       <p> age: {user.age} </p>
       <Button onClick={this.delete}> Delete </Button>
+      <br />
+      <br />
+      <Link to={`/users/${user.id}/edit`}> Update </Link>
+      <br />
+      <br />
     </div>
   )}
 }
