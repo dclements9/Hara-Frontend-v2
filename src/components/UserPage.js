@@ -1,25 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { deleteUser } from '../actions/users'
+import Button from 'react-bootstrap/Button'
 
-function UserPage (props) {
-    if (!props.user){
+class UserPage extends Component {
+
+  delete = () => {
+    this.props.deleteUSer(this.props.user.id)
+  }
+  render(){
+      const { user } = this.props
+    if (!user){
         return <p> Loading... </p>
     }
   return (
     
     <div> 
-      <h2> {props.user.first_name} {props.user.last_name} </h2>
-      <h3> rank: {props.user.rank} </h3>
-      <p> email:{props.user.email} </p>
-      <p> age: {props.user.age} </p>
+      <h2> {user.first_name} {user.last_name} </h2>
+      <h3> rank: {user.rank} </h3>
+      <p> email:{user.email} </p>
+      <p> age: {user.age} </p>
+      <Button onClick={this.delete}> Delete </Button>
     </div>
-  );
+  )}
 }
 
 const mapStateToProps = (state, props) => {
     const id = props.match.params.id;
-    const user = state.users.filter(user => user.id == id)[0]
+    const user = state.users.filter(user => user.id === parseInt(id))[0]
     return { user }
 }
  
-export default connect(mapStateToProps)(UserPage)
+export default connect(mapStateToProps, { deleteUser })(UserPage)
