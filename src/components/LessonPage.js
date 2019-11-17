@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteLesson } from '../actions/lessons'
+import Button from 'react-bootstrap/Button'
 
 class LessonPage extends Component  {    
 
