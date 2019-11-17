@@ -28,7 +28,7 @@ class NewLesson extends Component {
                     <input required type="text" name= "title" value={this.state.title} onChange = {this.handleChange} />
 
                     <label> Description: </label>
-                    <input type="text" name= "description" value={this.state.description} onChange = {this.handleChange}/>
+                    <textarea name= "description" value={this.state.description} onChange = {this.handleChange}/>
                     <br />
                     <br />
                     <label> Date: </label>
