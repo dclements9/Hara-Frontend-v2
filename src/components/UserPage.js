@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 class UserPage extends Component {
 
   delete = () => {
-    this.props.deleteUSer(this.props.user.id)
+    this.props.deleteUser(this.props.user.id, this.props.history)
   }
   render(){
       const { user } = this.props

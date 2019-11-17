@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 class LessonPage extends Component  {    
 
     delete = () => {
-        this.props.deleteLesson(this.props.lesson.id)
+        this.props.deleteLesson(this.props.lesson.id, this.props.history)
     }
 
 render (){
