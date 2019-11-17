@@ -23,6 +23,23 @@ export const createUser = (user) => {
     }
 }
 
+export const updateUser = (user, id, history) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/api/v1/users/${id}`, {
+            method: 'PATCH',
+            headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ user })
+        })
+        .then(resp => resp.json())
+        .then(user => { dispatch({ type: 'USER_UPDATED', payload: user})
+            history.push(`/users/${id}`)
+        })
+    }
+}
+
 export const deleteUser = (id, history) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/users/${id}`,{
