@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
-import NavHeader from "./components/Navbar";
+import NavBar from "./components/Navbar";
 // import Home from './components/Home'
 import NewLesson from './containers/NewLesson'
 import NewUser from './containers/NewUser'
@@ -34,7 +34,7 @@ class App extends Component {
       
       <div className="App">
         <Router>
-        <NavHeader />
+        <NavBar />
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/" component={Welcome} />
           <Route path="/welcome" component={Welcome} />
