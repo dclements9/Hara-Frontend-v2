@@ -34,7 +34,7 @@ render (){
       <Button onClick={this.delete}> Delete </Button>
       <br />
       <br />
-      <Link to={`/lessons/${lesson.id}/edit`}> Update </Link>
+      <Link to={`/lessons/${lesson.id}/edit`}> Update Lesson</Link>
       <br />
       <br />
     </div>
