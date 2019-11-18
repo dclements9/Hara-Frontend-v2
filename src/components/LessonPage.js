@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteLesson } from '../actions/lessons'
 import Button from 'react-bootstrap/Button'
+import { Link } from "react-router-dom"
 
 class LessonPage extends Component  {    
 
@@ -39,7 +40,7 @@ render (){
       )}
       <br />
       <br />
-      <Button href={`/lessons/${lesson.id}/edit`}> Update Lesson</Button>
+      <Link to={`/lessons/${lesson.id}/edit`}> Update Lesson</Link>
       <br />
       <br />
       <Button variant="danger" onClick={this.delete}> Delete </Button>
