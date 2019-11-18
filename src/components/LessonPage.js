@@ -34,6 +34,12 @@ render (){
       <Button onClick={this.delete}> Delete </Button>
       <br />
       <br />
+      <h3>Signed In: </h3>
+      {lesson.users.map( user =>
+        <h3>{user.first_name} {user.last_name}</h3>
+      )}
+      <br />
+      <br />
       <Link to={`/lessons/${lesson.id}/edit`}> Update Lesson</Link>
       <br />
       <br />
