@@ -17,7 +17,11 @@ render (){
   }
 
   return (
+    
     <div> 
+      <div>
+      {console.log(challenge.users)}
+      </div>
       <h1> {challenge.title} </h1>
       <h3> {challenge.description} </h3>
       <p> {challenge.stepOne} </p>
@@ -25,6 +29,12 @@ render (){
       <p> {challenge.stepThree} </p>
       <p> {challenge.stepFour} </p>
       <Button onClick={this.delete}> Delete </Button>
+      <br />
+      <br />
+      <h3>Completed By: </h3>
+      {challenge.users.map( user =>
+        <h3>{user.first_name} {user.last_name}</h3>
+      )}
       <br />
       <br />
       <Link to={`/challenges/${challenge.id}/edit`}> Update Challenge </Link>
