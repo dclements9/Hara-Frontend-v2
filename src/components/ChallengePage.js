@@ -20,7 +20,6 @@ render (){
     
     <div> 
       <div>
-      {console.log(challenge.users)}
       </div>
       <h1> {challenge.title} </h1>
       <h3> {challenge.description} </h3>
