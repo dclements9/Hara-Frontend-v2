@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteLesson } from '../actions/lessons'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
 
 class LessonPage extends Component  {    
 
@@ -31,7 +30,7 @@ render (){
       <p> {this.formatDate(lesson.date)}</p>
       <p>  {new Date(lesson.start_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})} - 
            {new Date(lesson.end_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})}</p>
-      <Button onClick={this.delete}> Delete </Button>
+      
       <br />
       <br />
       <h3>Signed In: </h3>
@@ -40,7 +39,10 @@ render (){
       )}
       <br />
       <br />
-      <Link to={`/lessons/${lesson.id}/edit`}> Update Lesson</Link>
+      <Button href={`/lessons/${lesson.id}/edit`}> Update Lesson</Button>
+      <br />
+      <br />
+      <Button variant="danger" onClick={this.delete}> Delete </Button>
       <br />
       <br />
     </div>

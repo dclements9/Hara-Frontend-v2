@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
+import Button from 'react-bootstrap/Button'
+
 
 class LessonsList extends Component {
 
@@ -19,10 +21,6 @@ formatDate(date) {
 
         return (
             <div>
-                <div>
-                    <Link to={"/lessons/new"}><h3>Create New Lesson</h3></Link>
-                </div>
-
                 <h1> Lessons List </h1>
                 
                 {this.props.lessons.map( lesson => 
@@ -32,10 +30,11 @@ formatDate(date) {
                         <p> {this.formatDate(lesson.date)}</p>
                         <p>{new Date(lesson.start_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})} - 
                         {new Date(lesson.end_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})}</p>
-                        <hr />
                     </div>
                 )}
-                
+                <div>
+                    <Button href={"/lessons/new"}><h3>Create New Lesson</h3></Button>
+                </div>
             </div>
         )
     }

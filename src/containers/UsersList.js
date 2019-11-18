@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
+import Button from 'react-bootstrap/Button'
 
 class UsersList extends Component {
     render() {
@@ -11,10 +12,6 @@ class UsersList extends Component {
         return (
             // TODO: Rank conversion
             <div>
-                <div>
-                    <Link to={"/users/new"}><h3>Create New User</h3></Link>
-                </div>
-            
                 <h1> Users List </h1>
 
                 {this.props.users.map( user => 
@@ -23,6 +20,9 @@ class UsersList extends Component {
                         <p>rank: {user.rank}</p>
                     </div>
                 )}
+                <div>
+                    <Button href={"/users/new"}><h3>Create New User</h3></Button>
+                </div>
             </div>
         )
     }

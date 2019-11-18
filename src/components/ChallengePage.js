@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteChallenge } from '../actions/challenges'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
 
 class ChallengePage extends Component  {    
 
@@ -27,7 +26,6 @@ render (){
       <p> {challenge.stepTwo} </p>
       <p> {challenge.stepThree} </p>
       <p> {challenge.stepFour} </p>
-      <Button onClick={this.delete}> Delete </Button>
       <br />
       <br />
       <h3>Completed By: </h3>
@@ -36,7 +34,10 @@ render (){
       )}
       <br />
       <br />
-      <Link to={`/challenges/${challenge.id}/edit`}> Update Challenge </Link>
+      <Button href={`/challenges/${challenge.id}/edit`}> Update Challenge </Button>
+      <br />
+      <br />
+      <Button variant="danger" onClick={this.delete}> Delete </Button>
       <br />
       <br />
     </div>

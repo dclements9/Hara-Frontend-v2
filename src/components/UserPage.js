@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteUser } from '../actions/users'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
 
 class UserPage extends Component {
 
@@ -21,10 +20,12 @@ class UserPage extends Component {
       <h3> rank: {user.rank} </h3>
       <p> email:{user.email} </p>
       <p> age: {user.age} </p>
-      <Button onClick={this.delete}> Delete </Button>
       <br />
       <br />
-      <Link to={`/users/${user.id}/edit`}> Update </Link>
+      <Button href={`/users/${user.id}/edit`}> Update </Button>
+      <br />
+      <br />
+      <Button variant="danger" onClick={this.delete}> Delete </Button>
       <br />
       <br />
     </div>
