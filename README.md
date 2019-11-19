@@ -8,10 +8,7 @@ This is the Client/Fronend. For the API/Backend visit:
 
 ## Installation
 
-To get started, 
-1. Confirm a `postgresql` server is installed and the service is running. 
-
-2. Follow the instructions on [Hara-Backend](https://github.com/dclements9/Hara-Backend) to have the API running in the background.
+To get started, follow the instructions on [Hara-Backend](https://github.com/dclements9/Hara-Backend) to have the API running in the background.
 
 ### Note: Hara Backend Sample Data includes 
 3 Users/Students<br/> 
