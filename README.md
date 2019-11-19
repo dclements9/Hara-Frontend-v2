@@ -21,11 +21,11 @@ To get started,
 
 Then run the following commands:
 
-`To Install`:
+To Install:
 ```js
 npm install
 ```
-`To start the local server`:
+To start the local server:
 ```js
 npm start
 ```
