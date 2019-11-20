@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 import { getUsers } from '.././actions/users'
 
 class UsersList extends Component {
@@ -12,21 +13,21 @@ class UsersList extends Component {
 
     render() {
         if (this.props.users.length === 0) {
-            return <h1> Loading... </h1>
+            return <Spinner animation="grow" variant="primary" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
         }
-        const divStyle = {
-            color:'white'
-        }
+        
 
         return (
             // TODO: Rank conversion
-            <div style={{ color:'white'}}>
+            <div>
                 <h1> Users List </h1>
 
                 {this.props.users.map( user => 
                     <div>
                         <Link to={`/users/${user.id}`}><h2>{user.first_name} {user.last_name}</h2></Link>
-                        <Button href={`/users/${user.id}`}><h2>Test me</h2></Button>
+                        <Button href={`/users/${user.id}`}><h2>Update (Fix Me)</h2></Button>
                         <p>rank: {user.rank}</p>
                     </div>
                 )}
