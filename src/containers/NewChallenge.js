@@ -18,7 +18,7 @@ class NewChallenge extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.createChallenge(this.state)
+        this.props.createChallenge(this.state, this.props.history)
     }
 
     render() {

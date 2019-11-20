@@ -17,12 +17,15 @@ class NewUser extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.createUser(this.state)
+        this.props.createUser(this.state, this.props.history)
     }
 
     render() {
         return (
             <div>
+                <div>
+                    {console.log(this.props.history)}
+                </div>
                 <form onSubmit = {this.handleSubmit}>
                     <label> First Name: </label>
                     <input required type="text" name= "first_name" value={this.state.first_name} onChange = {this.handleChange} />
