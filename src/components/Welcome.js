@@ -6,11 +6,8 @@ import Button from 'react-bootstrap/Button'
 class Welcome extends Component {
     render() {
         //Get signed in user
-        // const hStyle = { color: 'white' };
         return (
-            // <Navigationbar />
-            <div> 
-                {/* <h1 style={ hStyle }> Welcome to  Hara</h1> */}
+            <div > 
                 <h1> Welcome to Hara </h1>
                     <br />
                     <br />                    
