@@ -11,9 +11,6 @@ import UsersList from './containers/UsersList'
 import LessonsList from './containers/LessonsList'
 import ChallengesList from './containers/ChallengesList'
 import Welcome from './components/Welcome'
-import { getLessons } from './actions/lessons'
-// import { getUsers } from './actions/users'
-// import { getChallenges } from './actions/challenges'
 import LessonPage from './components/LessonPage'
 import UserPage from './components/UserPage'
 import ChallengePage from './components/ChallengePage'
@@ -22,12 +19,6 @@ import EditLesson from './containers/EditLesson'
 import EditChallenge from './containers/EditChallenge'
 
 class App extends Component {
-
-  componentDidMount() {
-    this.props.getLessons();
-    // this.props.getUsers();
-    // this.props.getChallenges();
-  }
 
   render() {
     return (
@@ -64,4 +55,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getLessons })(App);
+export default connect(mapStateToProps)(App);
