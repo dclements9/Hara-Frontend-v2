@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button'
 import { getChallenges } from '.././actions/challenges'
+import Spinner from 'react-bootstrap/Spinner'
 
 class ChallengesList extends Component {
 
@@ -12,7 +13,9 @@ class ChallengesList extends Component {
 
     render() {
         if (this.props.challenges.length === 0) {
-            return <h1> Loading... </h1>
+            return <Spinner animation="grow" variant="primary" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
         }
         return (
             <div>
