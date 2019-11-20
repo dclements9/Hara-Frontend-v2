@@ -8,7 +8,7 @@ export const getChallenges = () => {
     }
 }
 
-export const createChallenge = (challenge) => {
+export const createChallenge = (challenge, history) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/challenges`, {
             method: 'POST',
@@ -19,9 +19,9 @@ export const createChallenge = (challenge) => {
             body: JSON.stringify({ challenge })
         })
         .then(resp => resp.json())
-        .then(challenge => dispatch({
-            type: 'CHALLENGE_CREATED', payload: challenge
-        }))
+        .then(challenge => {dispatch({type: 'CHALLENGE_CREATED', payload: challenge})
+        history.push('/challenges')
+        })
     }
 }
 
