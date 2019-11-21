@@ -23,11 +23,10 @@ class UsersList extends Component {
             // TODO: Rank conversion
             <div>
                 <h1> Users List </h1>
-
+                <br />
                 {this.props.users.map( user => 
                     <div>
                         <Link to={`/users/${user.id}`}><h2>{user.first_name} {user.last_name}</h2></Link>
-                        <Button href={`/users/${user.id}`}><h2>Update (Fix Me)</h2></Button>
                         <p>rank: {user.rank}</p>
                     </div>
                 )}
