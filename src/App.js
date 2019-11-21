@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import NavBar from "./components/Navbar";
-// import Home from './components/Home'
+import Home from './components/Home'
 import NewLesson from './containers/NewLesson'
 import NewUser from './containers/NewUser'
 import NewChallenge from './containers/NewChallenge'
@@ -26,7 +26,7 @@ class App extends Component {
       <div className="App">
         <Router>
         <NavBar />
-          {/* <Route exact path="/" component={Home} /> */}
+          <Route exact path="/Home" component={Home} />
           <Route exact path="/" component={Welcome} />
           <Route path="/welcome" component={Welcome} />
           <Route exact path="/users" component={UsersList} />
