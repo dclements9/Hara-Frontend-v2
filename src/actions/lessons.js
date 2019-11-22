@@ -8,7 +8,7 @@ export const getLessons = () => {
     }
 }
 
-export const createLesson = (lesson) => {
+export const createLesson = (lesson, history) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/lessons`, {
             method: 'POST',
@@ -19,9 +19,9 @@ export const createLesson = (lesson) => {
             body: JSON.stringify({ lesson })
         })
         .then(resp => resp.json())
-        .then(lesson => dispatch({
-            type: 'LESSON_CREATED', payload: lesson
-        }))
+        .then(lesson => {dispatch({ type: 'LESSON_CREATED', payload: lesson})
+        history.push(`/lessons`)
+        })
     }
 }
 

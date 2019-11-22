@@ -18,18 +18,17 @@ formatDate(date) {
     
     return (formattedDate)
 }
-
+    
     render() {
         if (this.props.lessons.length === 0) {
             return <Spinner animation="grow" variant="primary" role="status">
                         <span className="sr-only">Loading...</span>
                     </Spinner>
         }
-
         return (
             <div>
                 <h1> Lessons List </h1>
-                
+                <br />
                 {this.props.lessons.map( lesson => 
                     <div>
                         <Link to={`/lessons/${lesson.id}`}><h2>{lesson.title}</h2></Link>
