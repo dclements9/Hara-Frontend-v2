@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createLesson} from '../actions/lessons'
+import { Button, Form, Col, Row } from 'react-bootstrap'
 
 class NewLesson extends Component {
     state = {
@@ -17,33 +18,51 @@ class NewLesson extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.createLesson(this.state)
+        this.props.createLesson(this.state, this.props.history)
     }
 
     render() {
         return (
             <div>
+                <br />
                 <form onSubmit = {this.handleSubmit}>
-                    <label> Title: </label>
-                    <input required type="text" name= "title" value={this.state.title} onChange = {this.handleChange} />
-
-                    <label> Description: </label>
-                    <textarea name= "description" value={this.state.description} onChange = {this.handleChange}/>
+                <Form.Group as={Row} controlId="initGroup">
+                        <Form.Label column xs={1}>Title:</Form.Label>
+                    <Col xs={2}>
+                        <Form.Control required type="textarea" rows="1" name="title" onChange={this.handleChange} />
+                    </Col>
+                    <Form.Label column xs={1}>Description:</Form.Label>
+                    <Col xs={5}>
+                        <Form.Control required type="textarea" rows="1" name="description" onChange={this.handleChange} />
+                    </Col>
+                    </Form.Group>
                     <br />
                     <br />
-                    <label> Date: </label>
-                    <input required name="date" type="date"value={this.state.date} onChange = {this.handleChange}/>
+                    <Form.Group as={Row} controlId="dateGroup">
+                        <Form.Label column xs={1}>Date:</Form.Label>
+                    <Col xs={2}>
+                        <Form.Control required type="date" rows="1" name="date" onChange={this.handleChange} />
+                    </Col>
+                    </Form.Group>
+                    <br />
+                    <Form.Group as={Row} controlId="timeGroup">
+                        <Form.Label column xs={1}>Start Time:</Form.Label>
+                    <Col xs={2}>
+                        <Form.Control required type="time" rows="1" name="start_time" onChange={this.handleChange} />
+                    </Col>
+                    <Form.Label column xs={1}>End Time:</Form.Label>
+                    <Col xs={2}>
+                        <Form.Control required type="time" rows="1" name="end_time" onChange={this.handleChange} />
+                    </Col>
+                    </Form.Group>
                     <br />
                     <br />
-                    <label> Start Time: </label>
-                    <input required name="start_time" type="time"value={this.state.start_time} onChange = {this.handleChange}/>
-                    
-                    <label> End Time: </label>
-                    <input required name="end_time" type="time"value={this.state.end_time} onChange = {this.handleChange}/>
-                    <br />
-                    <br />
-                <input type="submit" value="Create Lesson" />
-                </form>
+                    <Form.Group as={Row}>
+                        <Col sm={{ span: 7, offset: 0 }}>
+                        <Button type="submit">Create Lesson</Button>
+                        </Col>
+                    </Form.Group>
+                    </form>
             </div>
         )
     }
