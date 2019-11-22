@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteLesson } from '../actions/lessons'
 import Button from 'react-bootstrap/Button'
-import { Link } from "react-router-dom"
+import { LinkContainer } from 'react-router-bootstrap'
 
 class LessonPage extends Component  {    
 
@@ -40,7 +40,7 @@ render (){
       )}
       <br />
       <br />
-      <Link to={`/lessons/${lesson.id}/edit`}> Update Lesson</Link>
+      <LinkContainer exact to={`/lessons/${lesson.id}/edit`}><Button>Edit</Button></LinkContainer>
       <br />
       <br />
       <Button variant="danger" onClick={this.delete}> Delete </Button>

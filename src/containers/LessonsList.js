@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 import { getLessons } from '.././actions/lessons'
+import { LinkContainer } from 'react-router-bootstrap'
 
 class LessonsList extends Component {
 
@@ -39,7 +40,7 @@ formatDate(date) {
                     </div>
                 )}
                 <div>
-                    <Button href={"/lessons/new"}><h3>Create New Lesson</h3></Button>
+                    <LinkContainer exact to="/lessons/new"><Button><h3>Create Lesson</h3></Button></LinkContainer>
                 </div>
             </div>
         )
