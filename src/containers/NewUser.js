@@ -77,7 +77,7 @@ class NewUser extends Component {
                     
                 <Form.Group as={Row}>
                     <Col sm={{ span: 4, offset: 0 }}>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">Create User</Button>
                     </Col>
                 </Form.Group>
                 </form>
