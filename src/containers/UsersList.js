@@ -21,7 +21,6 @@ class UsersList extends Component {
         
 
         return (
-            // TODO: Rank conversion
             <div>
                 <h1> Users List </h1>
                 <br />
