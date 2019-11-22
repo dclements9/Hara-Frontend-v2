@@ -25,6 +25,7 @@ class NewChallenge extends Component {
     render() {
         return (
             <div>
+                <br />
                 <form onSubmit = {this.handleSubmit}>
                 <Form.Group as={Row} controlId="initGroup">
                         <Form.Label column xs={1}>Title:</Form.Label>
@@ -48,7 +49,6 @@ class NewChallenge extends Component {
                         <Form.Control type="textarea" rows="1" name="stepTwo" onChange={this.handleChange} />
                     </Col>
                     </Form.Group>
-
                     <Form.Group as={Row} controlId="stepsThreeFourGroup">
                     <Form.Label column xs={1}>Step Three:</Form.Label>
                     <Col xs={2}>
