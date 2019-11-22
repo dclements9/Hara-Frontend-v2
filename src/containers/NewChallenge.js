@@ -66,26 +66,6 @@ class NewChallenge extends Component {
                     <Button type="submit">Submit</Button>
                     </Col>
                 </Form.Group>
-
-                    {/* <label> Title: </label>
-                    <input required type="text" name= "title" value={this.state.title} onChange = {this.handleChange} />
-
-                    <label> Description: </label>
-                    <textarea required name= "description" value={this.state.description} onChange = {this.handleChange}/>
-                    <br />
-                    <br />
-                    <label> Step One: </label>
-                    <input name="stepOne" type="text" value={this.state.stepOne} onChange = {this.handleChange}/>
-                    <label> Step Two: </label>
-                    <input name="stepTwo" type="text" value={this.state.stepTwo} onChange = {this.handleChange}/>
-                    <label> Step Three: </label>
-                    <input name="stepThree" type="text" value={this.state.stepThree} onChange = {this.handleChange}/>
-                    <label> Step Four: </label>
-                    <input name="stepFour" type="text" value={this.state.stepFour} onChange = {this.handleChange}/>
-
-                    <br />
-                    <br />
-                <input type="submit" value="Create Challenge" /> */}
                 </form>
             </div>
         )
