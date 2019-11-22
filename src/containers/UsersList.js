@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 import { getUsers } from '.././actions/users'
+import { LinkContainer } from 'react-router-bootstrap'
 
 class UsersList extends Component {
 
@@ -31,7 +32,7 @@ class UsersList extends Component {
                     </div>
                 )}
                 <div>
-                    <Button href="/users/new"><h3>Create New User</h3></Button>
+                    <LinkContainer exact to="/users/new"><Button><h3>Create New User</h3></Button></LinkContainer>
                 </div>
             </div>
         )
