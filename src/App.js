@@ -11,7 +11,7 @@ import UsersListContainer from './containers/UsersListContainer'
 import LessonsListContainer from './containers/LessonsListContainer'
 import ChallengesListContainer from './containers/ChallengesListContainer'
 import Welcome from './components/Welcome'
-import LessonPage from './components/LessonPage'
+import LessonPageContainer from './containers/LessonPageContainer'
 import UserPageContainer from './containers/UserPageContainer'
 import ChallengePage from './components/ChallengePage'
 import EditUser from './containers/EditUser.js'
@@ -35,7 +35,7 @@ class App extends Component {
           <Route exact path="/lessons/new" component={NewLesson} />
           <Route exact path="/users/new" component={NewUser} />
           <Route exact path="/challenges/new" component={NewChallenge} />
-          <Route path="/lessons/:id" component={LessonPage}/>
+          <Route path="/lessons/:id" component={LessonPageContainer}/>
           <Route path="/lessons/:id/edit" component={EditLesson}/>
           <Route path="/users/:id" component={UserPageContainer} />
           <Route path="/users/:id/edit" component={EditUser} />
