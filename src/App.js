@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import NavBar from "./components/Navbar";
-import Home from './components/Home'
+import Home from './containers/Home'
 import NewLesson from './containers/NewLesson'
 import NewUser from './containers/NewUser'
 import NewChallenge from './containers/NewChallenge'
