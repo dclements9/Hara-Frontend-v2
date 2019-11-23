@@ -13,7 +13,7 @@ import ChallengesListContainer from './containers/ChallengesListContainer'
 import Welcome from './components/Welcome'
 import LessonPageContainer from './containers/LessonPageContainer'
 import UserPageContainer from './containers/UserPageContainer'
-import ChallengePage from './components/ChallengePage'
+import ChallengePageContainer from './containers/ChallengePageContainer'
 import EditUser from './containers/EditUser.js'
 import EditLesson from './containers/EditLesson'
 import EditChallenge from './containers/EditChallenge'
@@ -39,7 +39,7 @@ class App extends Component {
           <Route path="/lessons/:id/edit" component={EditLesson}/>
           <Route path="/users/:id" component={UserPageContainer} />
           <Route path="/users/:id/edit" component={EditUser} />
-          <Route path="/challenges/:id" component={ChallengePage} />
+          <Route path="/challenges/:id" component={ChallengePageContainer} />
           <Route path="/challenges/:id/edit" component={EditChallenge} />
         </Router>
       </div>
