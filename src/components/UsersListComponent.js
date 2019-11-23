@@ -1,5 +1,6 @@
 import React from 'react';
-import { LinkContainer, Button } from 'react-router-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import Button from 'react-bootstrap/Button'
 import { Link } from "react-router-dom"
 
 const UsersListComponent = props => (
@@ -14,7 +15,7 @@ const UsersListComponent = props => (
         </div>
     )}
     
-        {/* <LinkContainer exact to="/users/new"><Button><h3>Create New User</h3></Button></LinkContainer> */}
+        <LinkContainer exact to="/users/new"><Button><h3>Create New User</h3></Button></LinkContainer>
     
 </div>
 )

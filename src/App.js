@@ -7,9 +7,9 @@ import Home from './components/Home'
 import NewLesson from './containers/NewLesson'
 import NewUser from './containers/NewUser'
 import NewChallenge from './containers/NewChallenge'
-import UsersList from './containers/UsersList'
-import LessonsList from './containers/LessonsList'
-import ChallengesList from './containers/ChallengesList'
+import UsersListContainer from './containers/UsersListContainer'
+import LessonsListContainer from './containers/LessonsListContainer'
+import ChallengesListContainer from './containers/ChallengesListContainer'
 import Welcome from './components/Welcome'
 import LessonPage from './components/LessonPage'
 import UserPage from './components/UserPage'
@@ -29,9 +29,9 @@ class App extends Component {
           <Route exact path="/Home" component={Home} />
           <Route exact path="/" component={Welcome} />
           <Route path="/welcome" component={Welcome} />
-          <Route exact path="/users" component={UsersList} />
-          <Route exact path="/lessons" component={LessonsList} />
-          <Route exact path="/challenges" component={ChallengesList} />
+          <Route exact path="/users" component={UsersListContainer} />
+          <Route exact path="/lessons" component={LessonsListContainer} />
+          <Route exact path="/challenges" component={ChallengesListContainer} />
           <Route exact path="/lessons/new" component={NewLesson} />
           <Route exact path="/users/new" component={NewUser} />
           <Route exact path="/challenges/new" component={NewChallenge} />
