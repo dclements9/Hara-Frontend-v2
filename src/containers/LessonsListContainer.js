@@ -19,8 +19,7 @@ class LessonsListContainer extends Component {
         return (
             <LessonsListComponent lessons={this.props.lessons} />
         )
-    }
-    
+    }  
 }
     
 export default connect(state => ({ lessons: state.lessons }), { getLessons })(LessonsListContainer)

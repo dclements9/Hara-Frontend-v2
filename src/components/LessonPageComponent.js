@@ -9,7 +9,6 @@ const LessonPageComponent = props => (
       <p> {formatDate(props.lesson.date)}</p>
       <p>  {new Date(props.lesson.start_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})} - 
            {new Date(props.lesson.end_time).toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit'})}</p>
-      
       <br />
       <br />
       <h3>Signed In: </h3>

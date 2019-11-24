@@ -78,37 +78,6 @@ class EditLesson extends Component {
                         </Col>
                     </Form.Group>
                     </form>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                {/* <form onSubmit = {this.handleSubmit}>
-                    <label> Title: </label>
-                    <input required type="text" name= "title" value={this.state.title} onChange = {this.handleChange} />
-                    <label> Description: </label>
-                    <textarea name= "description" value={this.state.description} onChange = {this.handleChange}/>
-                    <br />
-                    <br />
-                    <label> Date: </label>
-                    <input required name="date" type="date"value={this.state.date} onChange = {this.handleChange}/>
-                    <br />
-                    <br />
-                    <label> Start Time: </label>
-                    <input required name="start_time" type="time"value={this.state.start_time} onChange = {this.handleChange}/>
-                    
-                    <label> End Time: </label>
-                    <input required name="end_time" type="time"value={this.state.end_time} onChange = {this.handleChange}/>
-                    <br />
-                    <br />
-                <input type="submit" value="Update Lesson" />
-                </form> */}
             </div>
         )
     }

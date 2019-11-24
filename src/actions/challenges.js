@@ -1,7 +1,5 @@
 export const getChallenges = () => {
     return dispatch => {
-        // make API call
-        // Once data received, dispatch to reducers
         return fetch(`http://localhost:3001/api/v1/challenges`)
             .then(resp => resp.json())
             .then(challenges => dispatch({ type: 'CHALLENGES_FETCH_SUCCESS', payload: challenges}))

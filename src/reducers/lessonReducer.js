@@ -1,6 +1,5 @@
 export default (state = [], action) => {
     switch (action.type) {
-        
         case 'LESSONS_FETCH_SUCCESS':
             return action.payload
         case 'LESSON_CREATED':

@@ -3,8 +3,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { Link } from "react-router-dom"
 
-const UsersListComponent = props => (
-    
+const UsersListComponent = props => (    
 <div>
     <h1> Users List </h1>
     <br />
@@ -19,4 +18,5 @@ const UsersListComponent = props => (
     
 </div>
 )
+
 export default UsersListComponent

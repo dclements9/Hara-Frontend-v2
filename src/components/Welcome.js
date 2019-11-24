@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import Navigationbar from './Navbar'
 import Button from 'react-bootstrap/Button'
 
 class Welcome extends Component {
     render() {
-        //Get signed in user
         return (
             <div > 
                 <h1> Welcome to Hara </h1>

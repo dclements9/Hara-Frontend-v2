@@ -4,7 +4,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import { getUsers } from '../actions/users'
 import SearchResults from '../components/SearchResults'
 import RetrieveCurrentLesson from './RetrieveCurrentLesson'
-import { Button, Form, FormControl, Col, Row } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 class Home extends Component {
     state = {

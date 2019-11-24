@@ -4,7 +4,6 @@ import { deleteChallenge } from '../actions/challenges'
 import ChallengePageComponent from '../components/ChallengePageComponent'
 
 class ChallengePageContainer extends Component  {    
-
   delete = () => {
     this.props.deleteChallenge(this.props.challenge.id, this.props.history)
   }
@@ -16,7 +15,6 @@ render (){
   }
 
   return (
-    
     <ChallengePageComponent challenge={this.props.challenge} history={this.props.history} delete={this.delete}/>
     )}
 }
