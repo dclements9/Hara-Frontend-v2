@@ -12,7 +12,7 @@ class LessonPageContainer extends Component  {
 render (){
     const { lesson } = this.props
   if (!lesson){
-    return <p> Loading... </p>
+    return <p></p>
   }
 
   return (

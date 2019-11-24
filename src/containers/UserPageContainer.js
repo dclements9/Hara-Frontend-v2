@@ -11,7 +11,7 @@ class UserPageContainer extends Component {
     render(){
         const { user } = this.props
             if (!user){
-                return <p> Loading... </p>
+                return <p></p>
         }
     return (
         <UserPageComponent user={this.props.user} history={this.props.history} delete={this.delete}/>

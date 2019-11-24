@@ -11,7 +11,7 @@ class ChallengePageContainer extends Component  {
 render (){
     const { challenge } = this.props
   if (!challenge){
-    return <p> Loading... </p>
+    return <p> </p>
   }
 
   return (
