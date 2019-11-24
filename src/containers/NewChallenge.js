@@ -25,6 +25,8 @@ class NewChallenge extends Component {
     render() {
         return (
             <div>
+                <h2> Create New Challenge: </h2>
+                <br />
                 <br />
                 <form onSubmit = {this.handleSubmit}>
                 <Form.Group as={Row} controlId="initGroup">

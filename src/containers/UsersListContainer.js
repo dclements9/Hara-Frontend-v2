@@ -12,7 +12,7 @@ class UsersListContainer extends Component {
     render() {
         if (this.props.users.length === 0) {
             return <Spinner animation="grow" variant="primary" role="status">
-                        <span className="sr-only">Loading...</span>
+                        <span className="sr-only"></span>
                     </Spinner>
         }
         return (

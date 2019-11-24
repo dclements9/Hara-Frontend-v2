@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import NavBar from "./components/Navbar";
 import Home from './containers/Home'
+import Welcome from './components/Welcome'
 import NewLesson from './containers/NewLesson'
 import NewUser from './containers/NewUser'
 import NewChallenge from './containers/NewChallenge'
 import UsersListContainer from './containers/UsersListContainer'
 import LessonsListContainer from './containers/LessonsListContainer'
 import ChallengesListContainer from './containers/ChallengesListContainer'
-import Welcome from './components/Welcome'
 import LessonPageContainer from './containers/LessonPageContainer'
 import UserPageContainer from './containers/UserPageContainer'
 import ChallengePageContainer from './containers/ChallengePageContainer'
@@ -22,7 +22,6 @@ class App extends Component {
 
   render() {
     return (
-      
       <div className="App">
         <Router>
         <NavBar />

@@ -4,7 +4,7 @@ This is the Client/Fronend. For the API/Backend visit:
 
 [Hara-Backend](https://github.com/dclements9/Hara-Backend)
 
-### Student Portal coming soon!
+### Student Login & Student Portal coming soon!
 
 ## Installation
 

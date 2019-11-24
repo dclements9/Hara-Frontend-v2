@@ -23,7 +23,8 @@ class NewUser extends Component {
 
     render() {
         return (
-            <div>
+            <div>    
+                <h2> Create New User: </h2>
                 <br />
                 <br />
                 <form onSubmit = {this.handleSubmit}>

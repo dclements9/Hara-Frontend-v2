@@ -24,6 +24,8 @@ class NewLesson extends Component {
     render() {
         return (
             <div>
+                <h2> Create New Lesson: </h2>
+                <br />
                 <br />
                 <form onSubmit = {this.handleSubmit}>
                 <Form.Group as={Row} controlId="initGroup">
