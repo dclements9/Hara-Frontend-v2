@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import Spinner from 'react-bootstrap/Spinner'
 import { getUsers } from '../actions/users'
 import SearchResults from '../components/SearchResults'
+import RetrieveCurrentLesson from './RetrieveCurrentLesson'
+import { Button, Form, FormControl, Col, Row } from 'react-bootstrap'
 
 class Home extends Component {
     state = {
@@ -31,13 +33,13 @@ handleSubmit = (e) => {
     }
     return (
       <div>
+        <RetrieveCurrentLesson />
       <form onSubmit = {this.handleSubmit}>
-
         <input type="text" placeholder="Search" name="searchTerm" onChange={this.handleChange} />
-
-        <input type="submit" value="Search" />
-
-        </form>
+        <br />        
+        <Button type="submit">Search</Button>
+      </form>
+      <br />
         {this.state.isSubmitted && <SearchResults users={this.props.users} searchTerm={this.state.searchTerm} />}
         </div>
     )
