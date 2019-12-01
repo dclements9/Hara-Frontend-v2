@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Spinner from 'react-bootstrap/Spinner'
 import { getUsers } from '../actions/users'
+import { getLessons } from '../actions/lessons'
 import SearchResults from '../components/SearchResults'
 import RetrieveCurrentLesson from './RetrieveCurrentLesson'
 import { Button } from 'react-bootstrap'
@@ -14,6 +15,7 @@ class Home extends Component {
 
 componentDidMount() {
   this.props.getUsers();
+  this.props.getLessons()
 }
 
 handleChange = (e) => {
@@ -26,11 +28,12 @@ handleSubmit = (e) => {
 }
 
   render() {
-    if (this.props.users.length === 0) {
+    if (this.props.users.length === 0 || this.props.lessons.length === 0) {
       return <Spinner animation="grow" variant="primary" role="status">
                   <span className="sr-only"></span>
               </Spinner>
     }
+    
     return (
       <div>
         <RetrieveCurrentLesson />
@@ -46,4 +49,4 @@ handleSubmit = (e) => {
   }
 }
 
-export default connect(state => ({ users: state.users }), {getUsers} )(Home)
+export default connect(state => ({ users: state.users, lessons: state.lessons }), {getUsers, getLessons} )(Home)
