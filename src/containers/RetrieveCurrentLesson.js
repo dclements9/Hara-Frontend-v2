@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Spinner from 'react-bootstrap/Spinner'
 import { getLessons } from '../actions/lessons'
+import { setCurrentLesson } from '../actions/currentLesson'
 import DisplayCurrentLesson from '.././components/DisplayCurrentLesson'
 
 class RetrieveCurrentLesson extends Component {
@@ -16,6 +17,8 @@ class RetrieveCurrentLesson extends Component {
                 return a.start_time.localeCompare(b.start_time)}) 
         let currentLesson = timeSortedLessons[0]
 
+        this.props.setCurrentLesson(currentLesson)
+        // debugger;
 //TODO: Closest lesson to NOW
 
         return <DisplayCurrentLesson lesson={currentLesson} />
@@ -33,4 +36,4 @@ class RetrieveCurrentLesson extends Component {
     }
 }
 
-export default connect(state => ({ lessons: state.lessons }), {getLessons} )(RetrieveCurrentLesson)
+export default connect(state => ({ lessons: state.lessons, currentLesson: state.currentLesson }), {getLessons, setCurrentLesson} )(RetrieveCurrentLesson)
