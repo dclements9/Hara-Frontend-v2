@@ -4,3 +4,20 @@ export const setCurrentLesson = lesson => {
         lesson
     }
 }
+
+export const associateUser = (lesson, id, history) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/api/v1/lessons/${id}`, {
+            method: 'PATCH',
+            headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ lesson })
+        })
+        .then(resp => resp.json())
+        .then(lesson => { dispatch({ type: 'USER_ASSOCIATED', payload: lesson})
+            window.location.reload(false)
+        })
+    }
+}
