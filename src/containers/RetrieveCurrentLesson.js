@@ -13,7 +13,7 @@ class RetrieveCurrentLesson extends Component {
     findCurrentLesson() {
 //
 //
-// TODO: If no current date exists. ERROR HANDLE.
+// TODO: If no current date exists. DISPLAY NO LESSON TODAY.
 //
 //
 
@@ -22,20 +22,21 @@ class RetrieveCurrentLesson extends Component {
         let currentDate = new Date().toISOString().split('T')[0]
 
         let currentTime = new Date()
-
+    
         filteredLessons = this.props.lessons.filter(lesson =>  lesson.date === currentDate) 
-
+    if ( filteredLessons.length !== 0 ) {
         let nextLesson = filteredLessons.reduce(function(previous, current){
             let comparePrevious = new Date(previous.start_time)
             let compareCurrent = new Date(current.start_time)
 
             return (Math.abs(compareCurrent - currentTime) < Math.abs(comparePrevious - currentTime) ? current : previous);
         })
-
+    
         this.props.setCurrentLesson(nextLesson)
-
+    
         return <DisplayCurrentLesson lesson={nextLesson} />
     }
+} 
 
     render(){
         if (this.props.lessons.length === 0) {
