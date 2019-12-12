@@ -43,7 +43,8 @@ handleSubmit = (e) => {
         <Button type="submit">Search</Button>
       </form>
       <br />
-        {this.state.isSubmitted && <SearchResults users={this.props.users} searchTerm={this.state.searchTerm} />}
+        {this.state.isSubmitted && <SearchResults 
+        users={this.props.users} searchTerm={this.state.searchTerm} history={this.props.history} />}
         </div>
     )
   }
