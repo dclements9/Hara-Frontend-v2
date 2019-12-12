@@ -40,3 +40,8 @@ Code of Conduct
 ## Code of Conduct
 
 Everyone interacting in the Hara project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+
+## TODO
+
+* Home/Search Bar - Display message if there are no lessons for today.
+* Display search results in real-time/a user inputs.
