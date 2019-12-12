@@ -11,16 +11,19 @@ class RetrieveCurrentLesson extends Component {
       }
     
     findCurrentLesson() {
-        
+//
+//
+// TODO: If no current date exists. ERROR HANDLE.
+//
+//
+
+        let filteredLessons = []
+
         let currentDate = new Date().toISOString().split('T')[0]
 
         let currentTime = new Date()
 
-        let filteredLessons = this.props.lessons.filter(lesson =>  lesson.date === currentDate) 
-        
-        // let timeSortedLessons = filteredLessons.sort(function (a, b) {
-        //         return a.start_time.localeCompare(b.start_time)}) 
-        // let currentLesson = timeSortedLessons[0]
+        filteredLessons = this.props.lessons.filter(lesson =>  lesson.date === currentDate) 
 
         let nextLesson = filteredLessons.reduce(function(previous, current){
             let comparePrevious = new Date(previous.start_time)
