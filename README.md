@@ -43,5 +43,4 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 
 ## TODO
 
-* Home/Search Bar - Display message if there are no lessons for today.
 * Display search results in real-time/a user inputs.
