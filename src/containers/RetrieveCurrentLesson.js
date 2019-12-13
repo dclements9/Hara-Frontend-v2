@@ -11,31 +11,28 @@ class RetrieveCurrentLesson extends Component {
       }
     
     findCurrentLesson() {
-//
-//
-// TODO: If no current date exists. DISPLAY NO LESSON TODAY.
-//
-//
 
         let filteredLessons = []
 
         let currentDate = new Date().toISOString().split('T')[0]
 
         let currentTime = new Date()
-    
+
+        let nextLesson = {title: "No lessons today.", start_time: "2000-01-01T00:00:00.000Z", end_time: "2000-01-01T00:00:00.000Z"}
+
         filteredLessons = this.props.lessons.filter(lesson =>  lesson.date === currentDate) 
     if ( filteredLessons.length !== 0 ) {
-        let nextLesson = filteredLessons.reduce(function(previous, current){
+        nextLesson = filteredLessons.reduce(function(previous, current){
             let comparePrevious = new Date(previous.start_time)
             let compareCurrent = new Date(current.start_time)
 
             return (Math.abs(compareCurrent - currentTime) < Math.abs(comparePrevious - currentTime) ? current : previous);
         })
-    
         this.props.setCurrentLesson(nextLesson)
-    
-        return <DisplayCurrentLesson lesson={nextLesson} />
+        
     }
+
+        return <DisplayCurrentLesson lesson={nextLesson} />
 } 
 
     render(){
