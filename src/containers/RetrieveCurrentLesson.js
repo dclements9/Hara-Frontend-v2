@@ -32,6 +32,10 @@ class RetrieveCurrentLesson extends Component {
         
     }
 
+    if (this.props.currentLesson.length === 0){
+        this.props.setCurrentLesson(nextLesson)
+    }
+    
         return <DisplayCurrentLesson lesson={nextLesson} />
 } 
 
