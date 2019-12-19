@@ -9,7 +9,7 @@ class SearchResults extends Component {
     }
 
     filterUsers( props){
-        return props.users.filter(user => user.last_name === props.searchTerm) 
+        return props.users.filter(user => user.last_name.toLowerCase() === props.searchTerm.toLowerCase()) 
     }
 
     attachUser = (user) => {
