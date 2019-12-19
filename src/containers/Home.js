@@ -50,7 +50,7 @@ handleSubmit = (e) => {
         <RetrieveCurrentLesson />
 
       <form onSubmit = {this.handleSubmit}>
-        <input type="text" placeholder="Search" name="searchTerm" onChange={this.handleChange} />
+        <input type="text" placeholder="Enter Last Name" name="searchTerm" onChange={this.handleChange} />
         <br />
         
         <Button type="submit" disabled={!isEnabled}>Search</Button>
