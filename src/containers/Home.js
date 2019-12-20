@@ -5,7 +5,7 @@ import { getUsers } from '../actions/users'
 import { getLessons } from '../actions/lessons'
 import SearchResults from '../components/SearchResults'
 import RetrieveCurrentLesson from './RetrieveCurrentLesson'
-import { Button } from 'react-bootstrap'
+import { Form, Col } from 'react-bootstrap'
 
 class Home extends Component {
   
@@ -14,17 +14,9 @@ class Home extends Component {
     isSubmitted: false
   }
 
-
 componentDidMount() {
   this.props.getUsers();
   this.props.getLessons()
-}
-
-isSubmitEnabled(){
-  if (this.props.currentLesson.title !== "No lessons today."){
-    return true
-  }
-  return false
 }
 
 handleChange = (e) => {
@@ -37,7 +29,6 @@ handleSubmit = (e) => {
 }
 
   render() {
-    const isEnabled = this.isSubmitEnabled();
 
     if (this.props.users.length === 0 || this.props.lessons.length === 0) {
       return <Spinner animation="grow" variant="primary" role="status">
@@ -46,17 +37,17 @@ handleSubmit = (e) => {
     }
     
     return (
-      <div>
+      <div >
         <RetrieveCurrentLesson />
-
-      <form onSubmit = {this.handleSubmit}>
-        <input type="text" placeholder="Enter Last Name" name="searchTerm" onChange={this.handleChange} />
-        <br />
-        
-        <Button type="submit" disabled={!isEnabled}>Search</Button>
-      </form>
       <br />
-        {this.state.isSubmitted && <SearchResults 
+      <Form onSubmit = {this.handleSubmit} >
+      <Col md={{ span: 2, offset: 5 }}>
+        <Form.Control type="text" placeholder="Enter Last Name" name="searchTerm" onChange={this.handleChange} />
+      </Col>
+        <br />
+      </Form>
+      <br />
+        {<SearchResults 
         users={this.props.users} searchTerm={this.state.searchTerm} history={this.props.history} />}
         </div>
     )
