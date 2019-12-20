@@ -19,7 +19,16 @@ class SearchResults extends Component {
         this.props.associateUser(updatedLesson, updatedLesson.id, this.props.history)
     }
 
+    isSubmitEnabled(){
+        if (this.props.currentLesson.title !== "No lessons today."){
+          return true
+        }
+        return false
+      }
+
     render() {
+        const isEnabled = this.isSubmitEnabled();
+
         return (
             <div>
             {this.filterUsers(this.props).map( user => 
@@ -27,7 +36,7 @@ class SearchResults extends Component {
                     <h2>{user.first_name} {user.last_name}</h2>
                     <h3> rank: {user.rank} </h3>
                     
-                    <Button variant="success" onClick={() => this.attachUser(user)}> Check-In </Button>
+                    <Button variant="success" disabled={!isEnabled} onClick={() => this.attachUser(user)}> Check-In </Button>
                 </div>
             )} 
             </div>
