@@ -43,4 +43,4 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 
 ## TODO
 
-* Display search results in real-time/as user inputs.
+* Recurring lessons
