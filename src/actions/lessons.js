@@ -1,6 +1,6 @@
 export const getLessons = () => {
     return dispatch => {
-        return fetch(`http://localhost:3001/api/v1/lessons`)
+        return fetch(`http://hara-back-api.herokuapp.com/api/v1/lessons`)
             .then(resp => resp.json())
             .then(lessons => dispatch({ type: 'LESSONS_FETCH_SUCCESS', payload: lessons}))
     }
@@ -8,7 +8,7 @@ export const getLessons = () => {
 
 export const createLesson = (lesson, history) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/lessons`, {
+        fetch(`http://hara-back-api.herokuapp.com/api/v1/lessons`, {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createLesson = (lesson, history) => {
 
 export const updateLesson = (lesson, id, history) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/lessons/${id}`, {
+        fetch(`http://hara-back-api.herokuapp.com/api/v1/lessons/${id}`, {
             method: 'PATCH',
             headers:{
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const updateLesson = (lesson, id, history) => {
 
 export const deleteLesson = (id, history) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/lessons/${id}`,{
+        fetch(`http://hara-back-api.herokuapp.com/api/v1/lessons/${id}`,{
             method: 'DELETE'})
             .then( resp => resp.json())
             .then(id => {
