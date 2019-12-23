@@ -44,3 +44,4 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 ## TODO
 
 * Recurring lessons
+* Center background on mobile
