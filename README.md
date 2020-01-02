@@ -1,8 +1,12 @@
 # Hara Client
 
-This is the Client/Fronend. For the API/Backend visit:
+This is the Client/Frontend. For the API/Backend visit:
 
 [Hara-Backend](https://github.com/dclements9/Hara-Backend)
+
+For a Live Heroku Demo (Database refreshed every day at midnight): 
+
+[Hara-Heroku](http://hara-client.herokuapp.com/)
 
 ### Student Portal coming soon!
 
@@ -12,7 +16,7 @@ To get started, follow the instructions on [Hara-Backend](https://github.com/dcl
 
 ### Note: Hara Backend Sample Data includes 
 3 Users/Students<br/> 
-3 Lessons (With associated users)<br/> 
+4 Lessons (With associated users)<br/> 
 2 Challanges (With associated users)
 
 
@@ -44,3 +48,5 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 ## TODO
 
 * Recurring lessons
+* Center background on mobile
+* Resolve - 'unique "key" prop' issue
