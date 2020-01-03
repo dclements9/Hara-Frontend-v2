@@ -7,8 +7,8 @@ const LessonsListComponent = props => (
     <div>
         <h1> Lessons List </h1>
         <br />
-        {props.lessons.map( lesson => 
-            <div>
+        {props.lessons.map( lesson =>     
+            <div key={lesson.id}>
                 <Link to={`/lessons/${lesson.id}`}><h2>{lesson.title}</h2></Link>
                 <p>{lesson.description}</p>
                 <p> {formatDate(lesson.date)}</p>

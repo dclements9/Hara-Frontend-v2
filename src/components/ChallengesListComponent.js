@@ -8,7 +8,7 @@ const ChallengesListComponent = props => (
         <h1> Challenges List </h1>
         <br />
         {props.challenges.map( challenge => 
-            <div>
+            <div key={challenge.id}>
                 <Link to={`/challenges/${challenge.id}`}><h2>{challenge.title}</h2></Link>
                 <p>{challenge.description}</p>
             </div>
