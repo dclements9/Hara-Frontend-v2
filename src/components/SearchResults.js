@@ -32,7 +32,7 @@ class SearchResults extends Component {
         return (
             <div>
             {this.filterUsers(this.props).map( user => 
-                <div>
+                <div key={user.id}>
                     <h2>{user.first_name} {user.last_name}</h2>
                     <h3> rank: {user.rank} </h3>
                     
