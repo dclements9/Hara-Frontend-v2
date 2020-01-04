@@ -49,4 +49,4 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 
 * Recurring lessons
 * Center background on mobile
-* Resolve - 'unique "key" prop' issue
+* Reduce Search Bar fetch requests
