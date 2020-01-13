@@ -11,12 +11,12 @@ class SearchResults extends Component {
     filterUsers( props){
         return props.users.filter(user => user.last_name.toLowerCase() === props.searchTerm.toLowerCase()) 
     }
-
     attachUser = (user) => {
         let updatedLesson = this.props.currentLesson
         
         updatedLesson.users = updatedLesson.users.concat(user)
         this.props.associateUser(updatedLesson, updatedLesson.id, this.props.history)
+        window.alert('Welcome' + ' ' + user.first_name + ' ' + user.last_name)
     }
 
     isSubmitEnabled(){
