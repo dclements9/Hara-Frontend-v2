@@ -17,7 +17,7 @@ class SearchResults extends Component {
         
         updatedLesson.users = updatedLesson.users.concat(user)
         this.props.associateUser(updatedLesson, updatedLesson.id, this.props.history)
-        window.alert('Welcome' + ' ' + user.first_name + ' ' + user.last_name)
+        window.alert('Welcome ' + user.first_name + ' ' + user.last_name)
     }
     
     isSubmitEnabled(){
