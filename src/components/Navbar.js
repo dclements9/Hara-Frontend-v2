@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Navbar } from "react-bootstrap";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Navbar } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const NavBar = () => {

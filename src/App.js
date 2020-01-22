@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
-import NavBar from "./components/Navbar";
+import NavBar from './components/Navbar';
 import Home from './containers/Home'
 import Welcome from './components/Welcome'
 import NewLesson from './containers/NewLesson'
