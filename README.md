@@ -48,4 +48,3 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 ## TODO
 
 * Recurring lessons
-* Reduce Search Bar fetch requests
