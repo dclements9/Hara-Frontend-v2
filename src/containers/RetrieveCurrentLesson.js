@@ -21,15 +21,15 @@ class RetrieveCurrentLesson extends Component {
         let nextLesson = {title: "No lessons today.", start_time: "2000-01-01T00:00:00.000Z", end_time: "2000-01-01T00:00:00.000Z"}
 
         filteredLessons = this.props.lessons.filter(lesson =>  lesson.date === currentDate) 
+
     if ( filteredLessons.length !== 0 ) {
         nextLesson = filteredLessons.reduce(function(previous, current){
             let comparePrevious = new Date(previous.start_time)
             let compareCurrent = new Date(current.start_time)
-
-            return (Math.abs(compareCurrent - currentTime) < Math.abs(comparePrevious - currentTime) ? current : previous);
+// Need to get Minutes for one hour differences
+            return (Math.abs(compareCurrent.getHours()+5 - currentTime.getHours()) < Math.abs(comparePrevious.getHours()+5 - currentTime.getHours()) ? current : previous);        
         })
-        this.props.setCurrentLesson(nextLesson)
-        
+        this.props.setCurrentLesson(nextLesson)       
     }
 
     if (this.props.currentLesson.length === 0){
