@@ -48,5 +48,4 @@ Everyone interacting in the Hara project’s codebases, issue trackers, chat roo
 ## TODO
 
 * Recurring lessons
-* Center background on mobile
-* Reduce Search Bar fetch requests
+* RetrieveCurrentLesson - Use minutes with hours for reduce difference
