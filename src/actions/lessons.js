@@ -23,7 +23,9 @@ export const createLesson = (lesson, history) => {
     }
 }
 
-export const updateLesson = (lesson, id, history) => {
+export const updateLesson = (lesson, id, history, users) => {
+    lesson.users = users;
+
     return dispatch => {
         fetch(`http://hara-back-api.herokuapp.com/api/v1/lessons/${id}`, {
             method: 'PATCH',
