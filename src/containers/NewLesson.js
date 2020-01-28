@@ -99,7 +99,7 @@ class NewLesson extends Component {
 
                     
                     <Form.Label column xs={1}>Occurrence Amount:</Form.Label>
-                    <Col xs={2}>
+                    <Col xs={1}>
                         <Form.Control required type="number" rows="1" name="occurrenceNumber" min="1" max="50" placeholder="1" onChange={this.handleChange} />
                     </Col>
 
