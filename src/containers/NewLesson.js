@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createLesson} from '../actions/lessons'
-import { Button, Form, Col, Row } from 'react-bootstrap'
+import { Button, Form, FormControl, Col, Row } from 'react-bootstrap'
 
 class NewLesson extends Component {
     state = {
@@ -9,7 +9,8 @@ class NewLesson extends Component {
         description: "",
         date: "",
         start_time: "",
-        end_time: ""
+        end_time: "",
+        occurrence: ""
     }
 
     handleChange = e => {
@@ -57,6 +58,19 @@ class NewLesson extends Component {
                         <Form.Control required type="time" rows="1" name="end_time" onChange={this.handleChange} />
                     </Col>
                     </Form.Group>
+                    <br />
+                    <Form.Group as={Row} controlId="occurrenceSelect">
+                    <Form.Label column xs={1}>Select Occurrence:</Form.Label>
+                    <Col xs={2}>
+                        <FormControl required as="select" name="occurrence" onChange={this.handleChange}>
+                        <option value="Once">Once</option>
+                        <option value="Daily">Daily</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                        </FormControl>
+                        </Col>
+                    </Form.Group>
+
                     <br />
                     <br />
                     <Form.Group as={Row}>
