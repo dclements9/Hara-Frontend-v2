@@ -10,7 +10,8 @@ class NewLesson extends Component {
         date: "",
         start_time: "",
         end_time: "",
-        occurrence: ""
+        occurrence: "",
+        occurrenceNumber: ""
     }
 
     handleChange = e => {
@@ -19,8 +20,35 @@ class NewLesson extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.createLesson(this.state, this.props.history)
+
+        switch (this.state.occurrence){
+            case 'Weekly':
+            let i = 1;
+
+            while ( i < this.state.occurrenceNumber){
+                const date = new Date(this.state.date);
+                
+                const newDate = this.addDays(date, 7)
+                debugger;
+
+                i++;
+            }
+            break;
+            case 'Monthly':
+            // Adds per month for one year
+
+            break;
+            default:
+                this.props.createLesson(this.state, this.props.history)
+        }
+        
     }
+
+    addDays(date, days) {
+        const copy = new Date(Number(date))
+        copy.setDate(date.getDate() + days)
+        return copy
+      }
 
     render() {
         return (
@@ -64,11 +92,17 @@ class NewLesson extends Component {
                     <Col xs={2}>
                         <FormControl required as="select" name="occurrence" onChange={this.handleChange}>
                         <option value="Once">Once</option>
-                        <option value="Daily">Daily</option>
                         <option value="Weekly">Weekly</option>
                         <option value="Monthly">Monthly</option>
                         </FormControl>
                         </Col>
+
+                    
+                    <Form.Label column xs={1}>Occurrence Amount:</Form.Label>
+                    <Col xs={2}>
+                        <Form.Control required type="number" rows="1" name="occurrenceNumber" min="1" max="50" placeholder="1" onChange={this.handleChange} />
+                    </Col>
+
                     </Form.Group>
 
                     <br />
