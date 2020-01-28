@@ -23,19 +23,25 @@ class NewLesson extends Component {
 
         switch (this.state.occurrence){
             case 'Weekly':
-            let i = 1;
+                // Adds per 7 days
 
-            while ( i < this.state.occurrenceNumber){
-                const date = new Date(this.state.date);
-                
-                const newDate = this.addDays(date, 7)
-                debugger;
+                let i = 1;
 
-                i++;
-            }
+                while ( i < this.state.occurrenceNumber){
+                    const date = new Date(this.state.date);
+                    
+                    const newDate = this.addDays(date, 7)
+
+                    this.setState({date: newDate})
+                    //debugger;
+                    this.props.createLesson(this.state, this.props.history)
+                    debugger;
+                    console.log("times:" + i + "date:" + this.state.date)
+                    i++;
+                }
             break;
             case 'Monthly':
-            // Adds per month for one year
+            // Adds per 30 days
 
             break;
             default:
