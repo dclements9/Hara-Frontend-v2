@@ -11,7 +11,7 @@ class NewLesson extends Component {
         start_time: "",
         end_time: "",
         occurrence: "",
-        occurrenceNumber: ""
+        occurrenceNumber: "1"
     }
 
     handleChange = e => {
@@ -44,7 +44,7 @@ class NewLesson extends Component {
 
             case 'Monthly':
                 this.props.createLesson(this.state, this.props.history)
-                // Adds per 1 month
+                // Adds per 30 days
 
                 let j = 1;
                 let monthDate = new Date(this.state.date);
@@ -129,7 +129,7 @@ class NewLesson extends Component {
                     
                     <Form.Label column xs={1}>Occurrence Amount:</Form.Label>
                     <Col xs={1}>
-                        <Form.Control required type="number" rows="1" name="occurrenceNumber" min="1" max="50" onChange={this.handleChange} />
+                        <Form.Control type="number" rows="1" name="occurrenceNumber" min="1" max="50" placeholder="1" onChange={this.handleChange} />
                     </Col>
 
                     </Form.Group>
