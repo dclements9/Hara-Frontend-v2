@@ -23,11 +23,13 @@ class NewLesson extends Component {
 
         switch (this.state.occurrence){
             case 'Weekly':
-                // Adds per 7 days
 
+                this.props.createLesson(this.state, this.props.history)
+
+                // Adds per 7 days
                 let i = 0;
                 let date = new Date(this.state.date)
-
+                
                 while ( i < this.state.occurrenceNumber){
                     
                     const newDate = this.addDays(date, 7)
@@ -107,7 +109,7 @@ class NewLesson extends Component {
                     
                     <Form.Label column xs={1}>Occurrence Amount:</Form.Label>
                     <Col xs={1}>
-                        <Form.Control required type="number" rows="1" name="occurrenceNumber" min="1" max="50" placeholder="1" onChange={this.handleChange} />
+                        <Form.Control required type="number" rows="1" name="occurrenceNumber" min="1" max="50" onChange={this.handleChange} />
                     </Col>
 
                     </Form.Group>
