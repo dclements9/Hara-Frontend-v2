@@ -25,19 +25,14 @@ class NewLesson extends Component {
 
             case 'Weekly':
                 this.props.createLesson(this.state, this.props.history)
-
                 // Adds per 7 days
                 let i = 1;
                 let dayDate = new Date(this.state.date);
                 
                 while ( i < this.state.occurrenceNumber){
-                    
                     const newDayDate = this.addDays(dayDate, 7)
-
                     dayDate = newDayDate
-
                     this.props.createLesson(this.state, this.props.history, dayDate)
-
                     i++;
                 };
             break;
@@ -45,18 +40,13 @@ class NewLesson extends Component {
             case 'Monthly':
                 this.props.createLesson(this.state, this.props.history)
                 // Adds per 30 days
-
                 let j = 1;
                 let monthDate = new Date(this.state.date);
                 
                 while ( j < this.state.occurrenceNumber){
-                    
                     const newMonthDate = this.addMonths(monthDate, 1)
-
                     monthDate = newMonthDate
-
                     this.props.createLesson(this.state, this.props.history, monthDate)
-
                     j++;
                 };
             break;
@@ -64,7 +54,6 @@ class NewLesson extends Component {
             default:
                 this.props.createLesson(this.state, this.props.history)
         }
-        
     }
 
     addDays(date, days) {
