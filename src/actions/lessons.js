@@ -6,7 +6,9 @@ export const getLessons = () => {
     }
 }
 
-export const createLesson = (lesson, history) => {
+export const createLesson = (lesson, history, date) => {
+    if (date) {lesson.date = date.toISOString().split("T")[0]}
+
     return dispatch => {
         fetch(`http://hara-back-api.herokuapp.com/api/v1/lessons`, {
             method: 'POST',
