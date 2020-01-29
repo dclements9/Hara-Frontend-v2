@@ -22,31 +22,45 @@ class NewLesson extends Component {
         e.preventDefault()
 
         switch (this.state.occurrence){
-            case 'Weekly':
 
+            case 'Weekly':
                 this.props.createLesson(this.state, this.props.history)
 
                 // Adds per 7 days
-                let i = 0;
-                let date = new Date(this.state.date)
+                let i = 1;
+                let dayDate = new Date(this.state.date);
                 
                 while ( i < this.state.occurrenceNumber){
                     
-                    const newDate = this.addDays(date, 7)
+                    const newDayDate = this.addDays(dayDate, 7)
 
-                    date = newDate
+                    dayDate = newDayDate
 
-                    this.props.createLesson(this.state, this.props.history, date)
+                    this.props.createLesson(this.state, this.props.history, dayDate)
 
-                    console.log("times:" + i + "date:" + date)
                     i++;
-                }
+                };
             break;
-            case 'Monthly':
-            // Adds per 30 days
 
-            
+            case 'Monthly':
+                this.props.createLesson(this.state, this.props.history)
+                // Adds per 1 month
+
+                let j = 1;
+                let monthDate = new Date(this.state.date);
+                
+                while ( j < this.state.occurrenceNumber){
+                    
+                    const newMonthDate = this.addMonths(monthDate, 1)
+
+                    monthDate = newMonthDate
+
+                    this.props.createLesson(this.state, this.props.history, monthDate)
+
+                    j++;
+                };
             break;
+
             default:
                 this.props.createLesson(this.state, this.props.history)
         }
@@ -58,6 +72,12 @@ class NewLesson extends Component {
         copy.setDate(date.getDate() + days)
         return copy
       }
+
+    addMonths(date, months) {
+        const copy = new Date(Number(date))
+        copy.setMonth(date.getMonth() + months)
+        return copy
+    }
 
     render() {
         return (
