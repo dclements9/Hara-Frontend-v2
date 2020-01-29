@@ -7,7 +7,7 @@ export const getLessons = () => {
 }
 
 export const createLesson = (lesson, history, date) => {
-    lesson.date = date.toISOString().split("T")[0]
+    if (date) {lesson.date = date.toISOString().split("T")[0]}
 
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/lessons`, {
