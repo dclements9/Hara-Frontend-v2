@@ -33,7 +33,7 @@ class EditLesson extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.updateLesson(this.state, this.props.lesson.id, this.props.history)
+        this.props.updateLesson(this.state, this.props.lesson.id, this.props.history, this.props.lesson.users)
     }
 
     render() {
